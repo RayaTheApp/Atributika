@@ -20,13 +20,13 @@ import UIKit
     
     // MARK: - private properties
 
-    private var textView: UITextView {
+    private lazy var textView: UITextView = {
         if #available(iOS 16.0, *) {
             UITextView(usingTextLayoutManager: false)
         } else {
             UITextView()
         }
-    }
+    }()
 
     private var detectionAreaButtons = [DetectionAreaButton]()
     
