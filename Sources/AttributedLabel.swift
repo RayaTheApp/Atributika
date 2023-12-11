@@ -18,7 +18,7 @@ import UIKit
         invalidateIntrinsicContentSize()
     }
     
-    //MARK: - private properties
+    // MARK: - private properties
     private let textView = UITextView()
     private var detectionAreaButtons = [DetectionAreaButton]()
     
