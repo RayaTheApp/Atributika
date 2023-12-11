@@ -18,8 +18,16 @@ import UIKit
         invalidateIntrinsicContentSize()
     }
     
-    //MARK: - private properties
-    private let textView = UITextView()
+    // MARK: - private properties
+
+    private lazy var textView: UITextView = {
+        if #available(iOS 16.0, *) {
+            UITextView(usingTextLayoutManager: false)
+        } else {
+            UITextView()
+        }
+    }()
+
     private var detectionAreaButtons = [DetectionAreaButton]()
     
     //MARK: - public properties
